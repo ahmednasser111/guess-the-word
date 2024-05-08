@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Guess The Word</title>
+</head>
+<body>
+	<h1></h1>
+	<div class="game-container">
+		<div class="game-area">
+			<div class="inputs"></div>
+			<div class="control">
+				<button id="check">Check</button>
+				<button id="hint"><span></span> Hint</button>
+			</div>
+			<div class="message"></div>
+		</div>
+		<div class="game-keys">
+			<h2>Key Colors</h2>
+			<div class="key">
+				<div class="key-color in-place"></div>
+				<div class="key-text">Found and In-placed</div>
+			</div>
+			<div class="key">
+				<div class="key-color not-in-place"></div>
+				<div class="key-text">Found and not In-placed</div>
+			</div>
+			<div class="key">
+				<div class="key-color not-found"></div>
+				<div class="key-text">Not Found</div>
+			</div>
+		</div>
+	</div>
+	<footer></footer>
+	<script src="main.js"></script>
+</body>
+</html>
