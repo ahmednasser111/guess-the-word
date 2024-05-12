@@ -1,35 +1,40 @@
-*{
+* {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
-:root{
+:root {
 	--main-color: #123331;
 }
-body{
+body {
 	background-color: #eee;
-	font-family: 'Times New Roman', Times, serif
+	font-family: "Times New Roman", Times, serif;
 }
-h1{
+h1 {
 	padding: 20px;
 	margin-bottom: 30px;
 	background-color: white;
 	text-align: center;
 }
-.game-container{
+
+.game-container {
 	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
 	text-align: center;
 	max-width: 1000px;
+	padding: 20px;
 	margin: 20px auto;
-	justify-content: space-between;
-	.game-area{
-		.inputs{
+	justify-content: center;
+	gap: 50px;
+	.game-area {
+		.inputs {
 			display: flex;
 			flex-direction: column;
 			gap: 30px;
 			margin-bottom: 30px;
-			.try-word{
-				&.disabled{
+			.try-word {
+				&.disabled {
 					pointer-events: none;
 					opacity: 0.2;
 				}
@@ -37,7 +42,7 @@ h1{
 				align-items: center;
 				gap: 10px;
 				font-weight: bold;
-				.try-letter{
+				.try-letter {
 					text-align: center;
 					width: 60px;
 					height: 60px;
@@ -45,21 +50,20 @@ h1{
 					border: none;
 					border-bottom: 3px solid black;
 					caret-color: var(--main-color);
-					&:focus{
+					&:focus {
 						outline: #ccc;
 					}
-					&.in-place{
+					&.in-place {
 						background-color: #f89e13;
 						border-color: #f89e13;
 						color: white;
 					}
-					&.not-in-place{
+					&.not-in-place {
 						background-color: #18ba89;
 						border-color: #18ba89;
 						color: white;
-					
 					}
-					&.not-found{
+					&.not-found {
 						background-color: #27303f;
 						border-color: #27303f;
 						color: white;
@@ -67,11 +71,11 @@ h1{
 				}
 			}
 		}
-		.control{
+		.control {
 			display: flex;
 			gap: 5px;
 			margin-bottom: 15px;
-			button{
+			button {
 				border: none;
 				font-size: 25px;
 				color: white;
@@ -80,73 +84,84 @@ h1{
 				cursor: pointer;
 				font-weight: bold;
 			}
-			#check{
+			#check {
 				flex: 1;
 				background-color: var(--main-color);
 			}
-			#hint{
+			#hint {
 				background-color: #009688;
 				width: fit-content;
 			}
-			button:disabled{
+			button:disabled {
 				opacity: 0.4;
 				background-color: black;
 				cursor: no-drop;
 			}
 		}
+		.message {
+			font-size: 30px;
+			text-align: center;
+			span {
+				color: var(--main-color);
+				font-weight: bold;
+				font-size: 50px;
+				display: block;
+			}
+		}
 	}
-	.game-keys{
-		h2{
+	.game-keys {
+		h2 {
 			margin-bottom: 10px;
 		}
-		.key{
+		.key {
 			background-color: white;
 			padding: 10px;
 			margin: 10px auto;
 			display: flex;
 			align-items: center;
 			gap: 10px;
-			.key-color{
+			.key-color {
 				width: 30px;
 				height: 30px;
 				border-radius: 50%;
 				margin-right: 5px;
-				&.in-place{
+				&.in-place {
 					background-color: #f89e13;
 				}
-				&.not-in-place{
+				&.not-in-place {
 					background-color: #18ba89;
 				}
-				&.not-found{
+				&.not-found {
 					background-color: #27303f;
 				}
 			}
-			.key-text{
+			.key-text {
 				font-weight: bold;
 				font-size: 22px;
 			}
-			
 		}
-
 	}
 }
-
 @media (max-width: 768px) {
-	.game-container{
-		flex-direction: column-reverse;
-		gap: 30px;
+	.game-container .game-area .inputs .try-word {
+		gap: 5px;
+	}
+	.game-container .game-area .inputs .try-word .try-letter {
+		width: 30px;
+		height: 30px;
+		font-size: 30px;
+		border-bottom-width: 1px;
 	}
 }
-@media (max-width: 768px){
-	.key-text{
+@media (max-width: 768px) {
+	.key-text {
 		font-size: 14px;
 	}
 }
 
-footer{
+footer {
 	position: fixed;
 	bottom: 0;
-	height: 30px; 
 	width: 100%;
 	background-color: #333;
 	color: white;
